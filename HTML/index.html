@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rose-deep: #8b2252;
+            --rose-mid: #c0516e;
+            --blush: #ffb6c1;
+            --blush-light: #fff0f3;
+            --champagne: #c9a84c;
+            --ivory: #fffff0;
+            --cream: #fff5e6;
+            --parchment: #fff8f0;
+            --text-dark: #3a1a2e;
+            --text-muted: #9e6b7a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--parchment);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .caveat {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* SECTION 1 HERO */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--rose-deep), var(--blush), var(--cream));
+            background-size: 300% 300%;
+            animation: gradientShift 8s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-size: 72px;
+            font-style: italic;
+            color: transparent;
+            background: linear-gradient(90deg, var(--champagne), #fff, var(--champagne));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-top: 16px;
+            z-index: 2;
+        }
+
+        .scroll-arrow {
+            position: absolute;
+            bottom: 40px;
+            font-size: 32px;
+            color: var(--champagne);
+            animation: pulseArrow 2s infinite;
+        }
+
+        @keyframes pulseArrow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(10px);
+                opacity: 1;
+            }
+        }
+
+        /* Floating Hearts/Petals */
+        .floating-element {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* SECTION 2 LOVE LETTER */
+        #love-letter {
+            padding: 100px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .letter-card {
+            max-width: 640px;
+            background: var(--parchment);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(139, 34, 82, 0.12);
+            padding: 48px;
+            text-align: center;
+            position: relative;
+            font-size: 22px;
+            color: var(--text-dark);
+        }
+
+        .wax-seal {
+            width: 48px;
+            height: 48px;
+            background: #c0392b;
+            border-radius: 50%;
+            margin: 32px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* SECTION 3 REASONS I LOVE YOU */
+        #reasons {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 40px;
+            color: var(--rose-deep);
+            margin-bottom: 48px;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .reasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reason-card {
+            background: var(--blush-light);
+            border-radius: 20px;
+            padding: 32px 24px;
+            transition: all 0.3s ease;
+            border: 1.5px solid transparent;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(139, 34, 82, 0.15);
+            border-color: var(--champagne);
+        }
+
+        .emoji-large {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .reason-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--rose-deep);
+            margin-bottom: 8px;
+        }
+
+        .reason-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* SECTION 4 OUR STORY */
+        #story {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            background: linear-gradient(to bottom, var(--blush), var(--rose-deep));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: 50px;
+            }
+
+            .timeline-item:nth-child(even) {
+                padding-left: 50px;
+            }
+        }
+
+        .timeline-card {
+            background: var(--parchment);
+            border-left: 4px solid var(--champagne);
+            border-radius: 16px;
+            padding: 24px;
+            width: 90%;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* SECTION 5 A PROMISE */
+        #promise {
+            background: var(--blush-light);
+            padding: 100px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .promise-card {
+            max-width: 680px;
+            background: var(--ivory);
+            border: 2px solid var(--champagne);
+            border-radius: 24px;
+            padding: 56px;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-mark {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 72px;
+            color: var(--champagne);
+            opacity: 0.15;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .promise-text {
+            font-size: 24px;
+            color: var(--text-dark);
+        }
+
+        /* SECTION 6 CLOSING */
+        #closing {
+            background: var(--rose-deep);
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing-text {
+            font-size: 52px;
+            color: var(--ivory);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .closing-text {
+                font-size: 32px;
+            }
+        }
+
+        .closing-sub {
+            font-size: 32px;
+            color: var(--blush);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Global Anim Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Camera pip & Legend */
+        #camera-pip {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 160px;
+            height: 120px;
+            border-radius: 16px;
+            border: 3px solid var(--blush);
+            background: #000;
+            z-index: 9999;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        #camera-pip video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scaleX(-1);
+        }
+
+        #status-dot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffbf00;
+            /* amber */
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
+
+        #legend-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 200px;
+            background: rgba(255, 182, 193, 0.15);
+            border: 1px solid var(--blush);
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9998;
+            color: var(--text-dark);
+            font-size: 12px;
+            padding: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        #legend-panel.collapsed {
+            transform: translateY(calc(100% - 40px));
+        }
+
+        #legend-toggle {
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 8px;
+            font-size: 14px;
+            user-select: none;
+        }
+
+        .legend-item {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        /* Overlays */
+        .fullscreen-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeScaleIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeScaleIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .backdrop-blur {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .modal-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            font-size: 24px;
+            color: var(--rose-deep);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+
+        /* Heart shape CSS */
+        .heart-shape {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: #ff6b9d;
+            transform: rotate(-45deg);
+            animation: heartbeat 0.8s infinite;
+            margin: 40px auto;
+        }
+
+        .heart-shape::before,
+        .heart-shape::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #ff6b9d;
+            border-radius: 50%;
+        }
+
+        .heart-shape::before {
+            top: -60px;
+            left: 0;
+        }
+
+        .heart-shape::after {
+            top: 0;
+            left: 60px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(-45deg) scale(1.15);
+            }
+
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+
+        /* Photo Frame */
+        .photo-frame {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+        }
+
+        .photo-frame img {
+            border: 4px solid var(--blush);
+            border-radius: 16px;
+            box-shadow: 0 0 20px var(--blush);
+            max-width: 90vw;
+            max-height: 70vh;
+        }
+
+        .photo-text {
+            margin-top: 16px;
+            font-size: 32px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SECTION 1 HERO -->
+    <section id="hero">
+        <h1 class="fade-in-up">For My Love</h1>
+        <p class="subtitle fade-in-up" style="transition-delay: 0.1s;">Because you deserve the whole world
+        </p>
+        <div class="scroll-arrow">↓</div>
+        <div id="hero-floating-container"></div>
+    </section>
+
+    <!-- SECTION 2 LOVE LETTER -->
+    <section id="love-letter">
+        <div class="letter-card caveat fade-in-up">
+            Hello meri jaan I am making this to show up for the fact that I true love you things have been rough some times
+	    for us but it can never change how I feel abt you now or ever. I LOVE YOU ALOT and main kabhi terko hate nhi kr skta 
+	    because tere sath rehna and js talking to you makes my day so much better I love you baby milte hai soon
+            <div class="wax-seal">❤️</div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 REASONS I LOVE YOU -->
+    <section id="reasons">
+        <h2 class="section-title fade-in-up">Why I Love You</h2>
+        <div class="reasons-grid">
+            <div class="reason-card fade-in-up" style="transition-delay: 0.1s;">
+                <div class="emoji-large">🌸</div>
+                <div class="reason-title playfair">Your smile</div>
+                <div class="reason-desc">I LOVE LOOKING AT YOUR TEEFS WHEN YOU LAUGH</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.2s;">
+                <div class="emoji-large">💪</div>
+                <div class="reason-title playfair">Your strength</div>
+                <div class="reason-desc">IK IT TAKES STRENGTH TO FORGIVE ME FOR EVERY SHIT</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.3s;">
+                <div class="emoji-large">🎵</div>
+                <div class="reason-title playfair">Your laugh</div>
+                <div class="reason-desc">BHAI I FEEL SO PROUD JB TU MERE JOKES PR HSTI</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.4s;">
+                <div class="emoji-large">💛</div>
+                <div class="reason-title playfair">Your heart</div>
+                <div class="reason-desc">HOW YOU LOVE EVERY ANIMALS AND THANK YOU FOR MAKING ME NOT EAT THEM</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.5s;">
+                <div class="emoji-large">🌹</div>
+                <div class="reason-title playfair">Your care</div>
+                <div class="reason-desc">HOW YOU CARE ABOUT ME</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.6s;">
+                <div class="emoji-large">✨</div>
+                <div class="reason-title playfair">Your silliness</div>
+                <div class="reason-desc">YOU MAKE EVERYTHING FUN</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.7s;">
+                <div class="emoji-large">🏡</div>
+                <div class="reason-title playfair">Your presence</div>
+                <div class="reason-desc">TUNE BOLA MAIN GHAR NHI GYA HU I WAS AT HOME WHENEVER I WAS WITH YOU</div>
+            </div>
+            <div class="reason-card fade-in-up" style="transition-delay: 0.8s;">
+                <div class="emoji-large">💗</div>
+                <div class="reason-title playfair">Just you</div>
+                <div class="reason-desc">TBH JUST EVERYTHING ABOUT YOU</div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 4 OUR STORY -->
+    <section id="story">
+        <h2 class="section-title fade-in-up">Our Story</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in-up" style="transition-delay: 0.1s;">
+                <div class="timeline-card">
+                    <div class="playfair" style="font-size: 18px; font-weight: bold;">✨ The day we met</div>
+                    <div style="font-size: 15px;">I was so nervous the first time meeting you and tbh i was so happy it didnt get any awkward
+		     i can still remember everything we did together from day 1 to the last day</div>
+                </div>
+            </div>
+            <div class="timeline-item fade-in-up" style="transition-delay: 0.2s;">
+                <div class="timeline-card">
+                    <div class="playfair" style="font-size: 18px; font-weight: bold;">🌹 Our first date</div>
+                    <div style="font-size: 15px;">The first date was not so good we waited so long to get the scooty from shamit 
+	 		and when we decided that cab krke hi chalte hai we went to penne de pie the food was not good but still the time with 
+			you there was the best thing ever</div>
+                </div>
+            </div>
+            <div class="timeline-item fade-in-up" style="transition-delay: 0.3s;">
+                <div class="timeline-card">
+                    <div class="playfair" style="font-size: 18px; font-weight: bold;">💫 The moment I fell for you</div>
+                    <div style="font-size: 15px;">The day i fell for you was the day when we started sharing every single thing with each other
+			har woh choti baat jo main terko btata tu merko btati what rambo did that day what jahnvi did and what your room mate of 
+			of that time adivi did i lovedddd every momemnt of it </div>
+                </div>
+            </div>
+            <div class="timeline-item fade-in-up" style="transition-delay: 0.4s;">
+                <div class="timeline-card">
+                    <div class="playfair" style="font-size: 18px; font-weight: bold;">🌸 Every ordinary day with you
+                    </div>
+                    <div style="font-size: 15px;">Just siting together with you watching a show or even just holding each other and 
+			sleeping together is the best thing i can ever ask for</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 A PROMISE -->
+    <section id="promise">
+        <div class="promise-card fade-in-up">
+            <div class="quote-mark">"</div>
+            <div class="promise-text playfair" style="font-style: italic;">
+                I promise to love you every fucking day to choose you on the day it is easy for us and when it is kinda 
+		complicated for us I will love you and choose you every single day. Loving you is the easies thing i have
+		done in my life and i can never hate you even if you feel aisa that I do I promise you i can never hate you 
+		and will love you forever
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 CLOSING -->
+    <section id="closing">
+        <div id="closing-floating-container" style="position: absolute; inset: 0; pointer-events: none;"></div>
+        <div class="closing-text playfair fade-in-up">I love you. More than yesterday</div>
+        <div class="closing-sub caveat fade-in-up" style="transition-delay: 0.2s;">— Always yours 💗</div>
+    </section>
+
+    <!-- UI ELEMENTS -->
+    <div id="camera-pip">
+        <div id="status-dot"></div>
+        <video id="webcam" autoplay playsinline></video>
+    </div>
+
+    <div id="legend-panel">
+        <div id="legend-toggle">▼ Gestures</div>
+        <div class="legend-item">🖐️ Open: Rain Hearts</div>
+        <div class="legend-item">🤞 Crossed: Wish</div>
+        <div class="legend-item">👍 Thumbs Up: Scroll Down</div>
+        <div class="legend-item">👌 Pinch: Favorite Photo</div>
+        <div class="legend-item">✌️ Peace: Confetti</div>
+        <div class="legend-item">🫶 Heart Hands: Big Heart</div>
+    </div>
+
+    <canvas id="confetti-canvas"
+        style="position: fixed; inset: 0; pointer-events: none; z-index: 9999; display:none;"></canvas>
+
+    <!-- Overlays -->
+    <div id="overlay-wish" class="fullscreen-overlay backdrop-blur">
+        <div class="modal-card playfair" style="font-style: italic;">Every crossed finger has been a wish for you 💕
+        </div>
+    </div>
+
+    <div id="overlay-photo" class="fullscreen-overlay" style="background: rgba(0,0,0,0.85);">
+        <button class="close-btn"
+            onclick="document.getElementById('overlay-photo').style.display='none'">&times;</button>
+        <div class="photo-frame playfair">
+            <img src="photo.jpg" alt="Us" />
+            <div class="photo-text" style="font-style: italic;">You're my favorite 🌸</div>
+        </div>
+    </div>
+
+    <div id="overlay-heart" class="fullscreen-overlay" style="background: rgba(0,0,0,0.75); flex-direction: column;">
+        <div class="heart-shape"></div>
+        <div class="playfair" style="color: var(--ivory); font-size: 42px; margin-top: 40px; font-style: italic;">This
+            one's for you 💗</div>
+    </div>
+
+    <style>
+        .rain-drop {
+            position: fixed;
+            top: -50px; /* Force starts offscreen */
+            z-index: 9999;
+            font-size: 24px;
+            animation: rainFall 4s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes rainFall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script type="module">
+        import {
+            HandLandmarker,
+            FilesetResolver
+        } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0";
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // Background floating hearts strings
+        function createFloatingElement(containerId, emojis, colors) {
+            const container = document.getElementById(containerId);
+            for (let i = 0; i < 20; i++) {
+                const el = document.createElement('div');
+                el.className = 'floating-element';
+                el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.animationDuration = (6 + Math.random() * 6) + 's';
+                el.style.animationDelay = (Math.random() * 5) + 's';
+                if (colors) el.style.color = colors[Math.floor(Math.random() * colors.length)];
+                container.appendChild(el);
+            }
+        }
+        createFloatingElement('hero-floating-container', ['💕', '🌸', '✨'], []);
+        createFloatingElement('closing-floating-container', ['💕', '💗', '✨'], ['var(--blush)', 'var(--champagne)']);
+
+        // Legend Toggle
+        const legendPanel = document.getElementById('legend-panel');
+        const legendToggle = document.getElementById('legend-toggle');
+        legendToggle.addEventListener('click', () => {
+            legendPanel.classList.toggle('collapsed');
+            legendToggle.innerText = legendPanel.classList.contains('collapsed') ? '▲ Gestures' : '▼ Gestures';
+        });
+
+        // Camera PIP Toggle
+        const cameraPip = document.getElementById('camera-pip');
+        cameraPip.addEventListener('click', () => {
+            if (cameraPip.style.opacity === '0.5') {
+                cameraPip.style.opacity = '1';
+                cameraPip.style.transform = 'scale(1)';
+            } else {
+                cameraPip.style.opacity = '0.5';
+                cameraPip.style.transform = 'scale(0.5) translate(50%, 50%)';
+            }
+        });
+
+        // Gestures and Mediapipe
+        let handLandmarker = undefined;
+        let webcamRunning = false;
+        let lastGestureTime = 0;
+        const video = document.getElementById("webcam");
+        const statusDot = document.getElementById("status-dot");
+
+        async function createHandLandmarker() {
+            try {
+                const vision = await FilesetResolver.forVisionTasks(
+                    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
+                );
+                handLandmarker = await HandLandmarker.createFromOptions(vision, {
+                    baseOptions: {
+                        modelAssetPath: `https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`,
+                        delegate: "GPU"
+                    },
+                    runningMode: "VIDEO",
+                    numHands: 2
+                });
+                startCamera();
+            } catch (error) {
+                console.error("Error creating HandLandmarker:", error);
+            }
+        }
+
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+                video.srcObject = stream;
+                video.addEventListener("loadeddata", predictWebcam);
+                statusDot.style.background = '#00ff00'; // green
+            }).catch(err => {
+                console.error(err);
+                statusDot.style.background = '#ff0000'; // red error
+            });
+        }
+
+        createHandLandmarker();
+
+        async function predictWebcam() {
+            let startTimeMs = performance.now();
+            if (handLandmarker) {
+                const results = handLandmarker.detectForVideo(video, startTimeMs);
+                processGestures(results);
+            }
+            setTimeout(() => window.requestAnimationFrame(predictWebcam), 200);
+        }
+
+        function processGestures(results) {
+            const now = Date.now();
+            if (now - lastGestureTime < 2000) return; // cooldown
+            if (!results.landmarks || results.landmarks.length === 0) return;
+
+            let gestureDetected = false;
+
+            // Heart Hands (requires 2 hands)
+            if (results.landmarks.length === 2) {
+                const h1 = results.landmarks[0];
+                const h2 = results.landmarks[1];
+                const dist = Math.hypot(h1[8].x - h2[8].x, h1[8].y - h2[8].y);
+                if (dist < 0.1) {
+                    showOverlay('overlay-heart', 5000);
+                    gestureDetected = true;
+                }
+            }
+
+            if (gestureDetected) { lastGestureTime = now; return; }
+
+            const hand = results.landmarks[0];
+            const tip = hand[8]; // Index tip
+            const pip = hand[6];
+            const mTip = hand[12]; // Middle tip
+            const mPip = hand[10];
+            const rTip = hand[16]; // Ring
+            const pTip = hand[20]; // Pinky
+            const tTip = hand[4]; // Thumb tip
+
+            // Distance helpers
+            const dist = (p1, p2) => Math.hypot(p1.x - p2.x, p1.y - p2.y);
+            const isCurled = (tipIdx, pipIdx) => hand[tipIdx].y > hand[pipIdx].y;
+            const isExtended = (tipIdx, pipIdx) => hand[tipIdx].y < hand[pipIdx].y;
+
+            // 1. Pinch
+            if (dist(tTip, tip) < 0.05) {
+                document.getElementById('overlay-photo').style.display = 'flex';
+                gestureDetected = true;
+            }
+            // 2. Pointing down
+            else if (tip.y > pip.y && mTip.y < mPip.y) { // wait, index pointing down means y is larger (screen coords)
+                // more robust pointing down: index tip y > pip y, others curled
+                if (tip.y > pip.y && hand[8].y > hand[5].y && hand[12].y < hand[9].y) {
+                    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+                    gestureDetected = true;
+                }
+            }
+            // 3. Thumbs up (thumb pointing up)
+            else if (tTip.y < hand[2].y && isCurled(8, 6) && isCurled(12, 10) && isCurled(16, 14)) {
+                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+                gestureDetected = true;
+            }
+            // 4. Crossed fingers (middle over index - simple x-dist check)
+            else if (isExtended(8, 6) && isExtended(12, 10) && isCurled(16, 14) && isCurled(20, 18)) {
+                // Peace OR Crossed
+                if (Math.abs(mTip.x - tip.x) > 0.05) {
+                    // This is actually Peace ✌️ → Confetti
+                    triggerConfetti();
+                    gestureDetected = true;
+                } else {
+                    // This is Crossed 🤞 → Wish
+                    showOverlay('overlay-wish', 4000);
+                    gestureDetected = true;
+                }
+            }
+            // 5. Open hand (all 5 extended)
+            else if (isExtended(8, 6) && isExtended(12, 10) && isExtended(16, 14) && isExtended(20, 18)) {
+                triggerRain();
+                gestureDetected = true;
+            }
+
+            if (gestureDetected) lastGestureTime = now;
+        }
+
+        function showOverlay(id, duration) {
+            const el = document.getElementById(id);
+            el.style.display = 'flex';
+            if (duration) setTimeout(() => { el.style.display = 'none'; }, duration);
+        }
+
+        // Rain Effect
+        function triggerRain() {
+            const emojis = ['💕', '🌸'];
+            for (let i = 0; i < 80; i++) {
+                const el = document.createElement('div');
+                el.className = 'rain-drop';
+                el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.animationDelay = (Math.random() * 2) + 's';
+                document.body.appendChild(el);
+                setTimeout(() => el.remove(), 6000);
+            }
+        }
+
+        // Confetti Effect
+        let confettiCtx, confettiParticles = [];
+        function triggerConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            canvas.style.display = 'block';
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            confettiCtx = canvas.getContext('2d');
+            const colors = ['#b76e79', '#ffb6c1', '#f7e7ce', '#fffff0'];
+            confettiParticles = [];
+            for (let i = 0; i < 200; i++) {
+                confettiParticles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height / 2,
+                    vx: (Math.random() - 0.5) * 20,
+                    vy: (Math.random() - 1) * 20,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    rotSpeed: (Math.random() - 0.5) * 10
+                });
+            }
+            requestAnimationFrame(renderConfetti);
+            setTimeout(() => { canvas.style.display = 'none'; confettiParticles = []; }, 3000);
+        }
+
+        function renderConfetti() {
+            if (confettiParticles.length === 0) return;
+            confettiCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+            confettiParticles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.5; // gravity
+                p.rotation += p.rotSpeed;
+                confettiCtx.save();
+                confettiCtx.translate(p.x, p.y);
+                confettiCtx.rotate(p.rotation * Math.PI / 180);
+                confettiCtx.fillStyle = p.color;
+                confettiCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                confettiCtx.restore();
+            });
+            requestAnimationFrame(renderConfetti);
+        }
+
+    </script>
+</body>
+
+</html>
